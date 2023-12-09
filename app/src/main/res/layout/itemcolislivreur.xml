@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/nom_clt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom Client"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/adresse" />
+
+    <TextView
+        android:id="@+id/adresse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adresse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nom_clt"
+        app:layout_constraintBottom_toTopOf="@+id/tel_clt" />
+
+    <TextView
+        android:id="@+id/tel_clt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Téléphone Client"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adresse"
+        app:layout_constraintBottom_toTopOf="@+id/des" />
+
+    <TextView
+        android:id="@+id/des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tel_clt"
+        app:layout_constraintBottom_toTopOf="@+id/prix" />
+
+    <TextView
+        android:id="@+id/prix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/des"
+        app:layout_constraintBottom_toTopOf="@+id/nbarticle" />
+
+    <TextView
+        android:id="@+id/nbarticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre d'Articles"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prix"
+        />
+
+    <ImageButton
+        android:id="@+id/edit"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:src="@drawable/edit"
+
+        tools:layout_editor_absoluteX="312dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <ImageButton
+        android:id="@+id/phoneButton"
+        android:layout_width="37dp"
+        android:layout_height="33dp"
+        android:src="@android:drawable/ic_menu_call"
+        tools:layout_editor_absoluteX="321dp"
+        tools:layout_editor_absoluteY="76dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

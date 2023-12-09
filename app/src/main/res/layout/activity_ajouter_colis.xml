@@ -1,0 +1,136 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/codebarre"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="code"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTextNomClt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="Nom complet du client"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Gouvernorat"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerGouvernorat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ville"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerVille"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/editTextAdresse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="Adresse complète et disponibilité"
+            android:inputType="textMultiLine" />
+
+        <EditText
+            android:id="@+id/editTextTelephone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="Téléphone"
+            android:inputType="phone" />
+
+
+        <!-- Désignation -->
+        <EditText
+            android:id="@+id/editTextDesignation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="Désignation"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTextPrix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="Prix"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editTextNbArticle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="Nombre d'articles"
+            android:inputType="number" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupModePaiement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonEspece"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="Espèce" />
+
+            <RadioButton
+                android:id="@+id/radioButtonCheque"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chèque" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/editTextCommentaire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Commentaire"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/btnsave"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:text="Ajouter" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+

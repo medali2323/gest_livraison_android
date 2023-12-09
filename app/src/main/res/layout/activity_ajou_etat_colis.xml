@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".AjouEtat_colis">
+
+    <!-- Bouton pour arrêter le scan -->
+    <Button
+        android:id="@+id/scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text=" scan" />
+
+    <Button
+        android:id="@+id/Scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Arrêter le scan" />
+
+    <!-- Spinner pour les états des colis -->
+
+    <!-- ListView pour afficher les codes-barres -->
+    <Spinner
+        android:id="@+id/etatColisSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scan"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="30dp" />
+
+    <ListView
+        android:id="@+id/barcodeListView"
+        android:layout_width="361dp"
+        android:layout_height="433dp"
+        android:layout_below="@id/etatColisSpinner"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/subbmitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="602dp"
+        android:text="Ajouter" />
+
+
+
+
+</RelativeLayout>

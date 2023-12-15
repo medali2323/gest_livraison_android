@@ -97,14 +97,18 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "An error occurred", Toast.LENGTH_LONG).show();
                 }
                 */
-                if (!logintxt.getText().toString().equals("admin")) {
-                    Intent intent = new Intent(Login.this, AppHomeActivity.class);
-                    startActivity(intent);
-                } else {
-                    Intent intent = new Intent(Login.this, AjouEtat_colis.class);
-                    startActivity(intent);
-                }
+                if(logintxt.getText().toString()==""|mdptxt.getText().toString()==""){
+                    Toast.makeText(Login.this, "remplir vos cordonées svp", Toast.LENGTH_LONG).show();
 
+                }else {
+                    if (!logintxt.getText().toString().equals("admin")) {
+                        Intent intent = new Intent(Login.this, AppHomeActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(Login.this, AjouEtat_colis.class);
+                        startActivity(intent);
+                    }
+                }
             }
         });
 

@@ -3,9 +3,11 @@ package com.example.gestion_livraison_android;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +22,9 @@ import org.json.JSONObject;
 
 public class ColisDetaiile extends AppCompatActivity {
     private Button btnModifier;
-    private TextView nom_clt, tel_clt, adresse, codebarre,prix;
+    private ImageButton call;
+    private String tel;
+    private TextView nom_clt, tel_clt, adresse, codebarre,prix,adresse3,des,commentaire;
     private  int code;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +32,16 @@ public class ColisDetaiile extends AppCompatActivity {
         setContentView(R.layout.detaille_colis);
 
         // Initialisation des vues
-        codebarre = findViewById(R.id.codebarre1);
-        nom_clt = findViewById(R.id.nom_clt);
-        tel_clt = findViewById(R.id.tel_clt);
-        adresse = findViewById(R.id.Adresse1);
-        btnModifier= findViewById(R.id.modifier);
+        codebarre = findViewById(R.id.codebarre3);
+        nom_clt = findViewById(R.id.nom_clt2);
+        tel_clt = findViewById(R.id.tel_clt2);
+        adresse = findViewById(R.id.adresseclt);
+        adresse3 = findViewById(R.id.adresse3);
+        des = findViewById(R.id.des);
+        commentaire = findViewById(R.id.commentaire);
+
+        btnModifier= findViewById(R.id.modifier2);
+        call= findViewById(R.id.call2);
         prix=findViewById(R.id.prix);
         // Récupération du code colis depuis l'intent
         Intent i = getIntent();
@@ -50,6 +59,8 @@ public class ColisDetaiile extends AppCompatActivity {
                         try {
                             // Analyse de la réponse JSON
                             Colis colis = new Colis();
+                            colis.setCodeColis(response.getInt("code_colis"));
+
                             colis.setNomClt(response.getString("nom_clt"));
                             colis.setAdresseClt(response.getString("adresse_clt"));
                             colis.setTelClt(response.getString("tel_clt"));
@@ -57,11 +68,17 @@ public class ColisDetaiile extends AppCompatActivity {
                             colis.setPrix(response.getDouble("prix"));
                             colis.setNbArticle(response.getInt("nb_article"));
                             colis.setCommentaire(response.getString("commentaire"));
+                            colis.setGouvernement(response.getString("gouvernement"));
+                            colis.setVille(response.getString("ville"));
 
+                            tel=response.getString("tel_clt");
                             // Affichage des données dans les TextViews
-                            nom_clt.setText(colis.getNomClt());
-                            adresse.setText(colis.getAdresseClt());
-                            tel_clt.setText(colis.getTelClt());
+                            nom_clt.setText("Nom :"+colis.getNomClt());
+                            adresse.setText("Adresse :"+colis.getAdresseClt());
+                            adresse3.setText("Adresse :"+colis.getAdresseClt()+" "+ colis.getVille()+" "+colis.getGouvernement());
+                            des.setText("Desiniation  :"+colis.getDes());
+                            commentaire.setText("commentaire :" + colis.getCommentaire());
+                            tel_clt.setText("numero de telephone :"+colis.getTelClt());
                             codebarre.setText(String.valueOf(colis.getCodeColis()));
                             prix.setText(String.valueOf(colis.getPrix()));
                         } catch (JSONException e) {
@@ -81,6 +98,13 @@ public class ColisDetaiile extends AppCompatActivity {
 
         // Ajout du listener sur le bouton de confirmation
         btnModifier.setOnClickListener(v -> gotomodifier(this));
+        call.setOnClickListener(v -> gotocall());
+
+    }
+
+    private void gotocall() {
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+216"+tel));
+        startActivity(intent);
     }
 
     private void gotomodifier(Context context) {

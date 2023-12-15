@@ -103,8 +103,8 @@ public class AjouterColis extends Fragment {
         buttonSave = view.findViewById(R.id.btnsave);
 
         // Initialisation des gouvernorats
-        gouvernorats.add("Gouvernorat 1");
-        gouvernorats.add("Gouvernorat 2");
+        gouvernorats.add("Sfax");
+        gouvernorats.add("tunis");
 
         // Initialisation des villes
         villes.add("Ville 1");
